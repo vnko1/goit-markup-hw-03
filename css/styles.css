@@ -130,8 +130,6 @@ ul {
 /* HEADER */
 
 .header {
-  padding-top: 24px;
-  padding-bottom: 24px;
   border-bottom: 1px solid #ececec;
 }
 
@@ -156,6 +154,8 @@ ul {
 }
 
 .header-nav-link {
+  display: block;
+  padding: 32px 0;
   color: var(--main-color);
 }
 
@@ -172,6 +172,8 @@ ul {
 /* HERO */
 
 .hero {
+  padding-top: 200px;
+  padding-bottom: 200px;
   background-color: var(--secondary-bgc);
   text-align: center;
 }
@@ -227,6 +229,10 @@ ul {
 }
 
 /* WORKS */
+
+.work.section {
+  padding-top: 0;
+}
 
 .works-title {
   margin-bottom: 50px;
