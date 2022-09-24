@@ -1,4 +1,5 @@
 :root {
+  --typical-indent: 30px;
   --main-font: "Roboto", sans-serif;
   --logo-font: "Raleway", sans-serif;
   --header-logo-color: #000;
@@ -12,6 +13,7 @@
   --main-bgc: #fff;
   --secondary-bgc: #2f303a;
   --teams-bgc: #f5f4fa;
+  --border-color: #eee;
 }
 
 body {
@@ -37,7 +39,7 @@ ul {
   padding-left: 0;
 }
 
-.image {
+.image-block {
   display: block;
 }
 
@@ -68,8 +70,6 @@ ul {
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
-
-  /* outline: 2px solid tomato; */
 }
 
 .section {
@@ -108,7 +108,11 @@ ul {
 }
 
 .button {
+  border: none;
+  border-radius: 4px;
+  font-family: inherit;
   font-size: 16px;
+  text-align: center;
   cursor: pointer;
 }
 
@@ -126,16 +130,18 @@ ul {
 /* HEADER */
 
 .header {
-  margin-top: 24px;
-  margin-bottom: 24px;
+  padding-top: 24px;
+  padding-bottom: 24px;
   border-bottom: 1px solid #ececec;
-
-  background-color: var(--main-bgc);
 }
 
 .header-container {
   display: flex;
   align-items: center;
+}
+
+.header-logo.logo {
+  color: var(--header-logo-color);
 }
 
 .header-nav {
@@ -149,18 +155,14 @@ ul {
   gap: 50px;
 }
 
+.header-nav-link {
+  color: var(--main-color);
+}
+
 .header-contacts-list {
   display: flex;
   margin-left: auto;
   gap: 50px;
-}
-
-.header-logo.logo {
-  color: var(--header-logo-color);
-}
-
-.header-nav-link {
-  color: var(--main-color);
 }
 
 .header-contacts-link {
@@ -175,31 +177,23 @@ ul {
 }
 
 .hero-title {
-  margin-bottom: 30px;
   max-width: 696px;
+  margin-bottom: 30px;
   margin-left: auto;
   margin-right: auto;
-
   font-weight: 900;
   font-size: 44px;
   line-height: 1.36;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-
   color: var(--secondary-color);
 }
 .hero-btn {
-  min-width: 152px;
-  padding: 10px 32px;
-  border: none;
-  border-radius: 4px;
-
-  text-align: center;
-  font-family: inherit;
+  min-width: 216px;
+  min-height: 50px;
   font-weight: 700;
   line-height: calc(30 / 16);
   letter-spacing: 0.06em;
-
   background-color: var(--accent-color);
   color: var(--secondary-color);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
@@ -212,22 +206,17 @@ ul {
 
 /* BENEFITS */
 
-.benefits {
-  background-color: var(--main-bgc);
-}
-
 .benefits-list {
   display: flex;
-  gap: 10px;
+  gap: var(--typical-indent);
 }
 
 .benefits-item {
-  width: calc((100% - 30px) / 4);
+  width: calc((100% - 90px) / 4);
 }
 
 .benefits-item-title {
   margin-bottom: 10px;
-
   font-size: inherit;
   line-height: calc(16 / 14);
   color: var(--main-color);
@@ -239,17 +228,13 @@ ul {
 
 /* WORKS */
 
-.works {
-  background-color: var(--main-bgc);
-}
-
 .works-title {
   margin-bottom: 50px;
 }
 
 .works-list {
   display: flex;
-  column-gap: 30px;
+  gap: var(--typical-indent);
 }
 
 .works-item {
@@ -268,22 +253,19 @@ ul {
 
 .teams-list {
   display: flex;
-  gap: 30px;
+  margin-left: -30px;
 }
 
 .teams-item {
   width: calc((100% - 90px) / 4);
+  margin-left: 30px;
 }
 
 .teams-item-container {
   padding: 30px 0;
-  width: 100%;
   border-radius: 0px 0px 4px 4px;
-
   text-align: center;
-
   background-color: var(--secondary-color);
-
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
 }
@@ -303,12 +285,19 @@ ul {
 
 /* PORTFOLIO */
 
-.portfolio {
-  background-color: var(--main-bgc);
+.portfolio-filter-list {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 50px;
+}
+
+.portfolio-filter-item:first-child .portfolio-filter-btn {
+  padding: 6px 25px;
 }
 
 .portfolio-filter-btn {
-  font-family: inherit;
+  padding: 6px 22px;
   font-weight: 500;
   line-height: calc(26 / 16);
   letter-spacing: inherit;
@@ -322,7 +311,25 @@ ul {
   color: var(--secondary-color);
 }
 
+.portfolio-works-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--typical-indent);
+}
+
+.portfolio-works-item {
+  width: calc((100% - 60px) / 3);
+}
+
+.cards-text-container {
+  padding: 20px 24px;
+  background-color: var(--secondary-color);
+  border: 1px solid var(--border-color);
+  background-color: var(--main-bgc);
+}
+
 .portfolio-works-title {
+  margin-bottom: 4px;
   font-size: 18px;
   line-height: calc(36 / 18);
   letter-spacing: 0.06em;
@@ -339,13 +346,12 @@ ul {
 
 .footer {
   padding: 60px 0;
-
   background-color: var(--secondary-bgc);
 }
 
 .footer-logo.logo {
   display: block;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
   color: var(--secondary-color);
 }
 
