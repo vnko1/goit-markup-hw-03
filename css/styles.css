@@ -41,6 +41,8 @@ ul {
 
 .image-block {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .list {
@@ -139,6 +141,8 @@ ul {
 }
 
 .header-logo.logo {
+  padding-top: 24px;
+  padding-bottom: 25px;
   color: var(--header-logo-color);
 }
 
