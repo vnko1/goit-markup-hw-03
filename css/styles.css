@@ -91,6 +91,8 @@ ul {
 }
 
 .header-links {
+  display: block;
+  padding: 32px 0;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
@@ -169,11 +171,6 @@ ul {
 
 .header-contacts-link {
   color: currentColor;
-}
-
-.header-links {
-  display: block;
-  padding: 32px 0;
 }
 
 /* HERO */
